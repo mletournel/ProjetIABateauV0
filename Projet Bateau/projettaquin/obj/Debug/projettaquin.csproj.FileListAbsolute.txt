@@ -1,0 +1,19 @@
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\bin\Debug\projettaquin.exe.config
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\bin\Debug\projettaquin.exe
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\bin\Debug\projettaquin.pdb
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\obj\Debug\projettaquin.csprojResolveAssemblyReference.cache
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\obj\Debug\projettaquin.Form1.resources
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\obj\Debug\projettaquin.Properties.Resources.resources
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\obj\Debug\projettaquin.csproj.GenerateResource.Cache
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\obj\Debug\projettaquin.exe
+C:\Users\cbrissaud\Downloads\problem solving2\problem solving2\taquin\projettaquin\obj\Debug\projettaquin.pdb
+C:\Users\cbrissaud\Downloads\problem solving2\Projet Bateau\Projet Bateau\projettaquin\bin\Debug\projettaquin.exe.config
+C:\Users\cbrissaud\Downloads\problem solving2\Projet Bateau\Projet Bateau\projettaquin\obj\Debug\projettaquin.exe
+C:\Users\cbrissaud\Downloads\problem solving2\Projet Bateau\Projet Bateau\projettaquin\obj\Debug\projettaquin.pdb
+C:\Users\cbrissaud\Downloads\problem solving2\Projet Bateau\Projet Bateau\projettaquin\obj\Debug\projettaquin.csprojResolveAssemblyReference.cache
+C:\Users\cbrissaud\Downloads\problem solving2\Projet Bateau\Projet Bateau\projettaquin\obj\Debug\projettaquin.Form1.resources
+C:\Users\cbrissaud\Downloads\problem solving2\Projet Bateau\Projet Bateau\projettaquin\obj\Debug\projettaquin.Properties.Resources.resources
+C:\Users\cbrissaud\Downloads\problem solving2\Projet Bateau\Projet Bateau\projettaquin\obj\Debug\projettaquin.csproj.GenerateResource.Cache
+C:\Users\cbrissaud\Documents\problem solving2\Projet Bateau\Projet Bateau\projettaquin\bin\Debug\projettaquin.exe.config
+C:\Users\cbrissaud\Documents\problem solving2\Projet Bateau\Projet Bateau\projettaquin\obj\Debug\projettaquin.exe
+C:\Users\cbrissaud\Documents\problem solving2\Projet Bateau\Projet Bateau\projettaquin\obj\Debug\projettaquin.pdb

@@ -19,8 +19,11 @@ namespace projettaquin
 
         private void button1_Click(object sender, EventArgs e)
         {
+            NodeBateau.cas = 'a';
             SearchTree g = new SearchTree();
-            NodeBateau N0 = new NodeBateau(textBox1.Text);
+            NodeBateau N0 = new NodeBateau(100, 200);
+            NodeBateau._xf = 200;
+            NodeBateau._yf = 100;
             List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
 
             if (Lres.Count == 0)
@@ -28,14 +31,15 @@ namespace projettaquin
                 labelsolution.Text = "Pas de solution";
             }
             else
-            {   labelsolution.Text = "Une solution a été trouvée";
+            {
+                labelsolution.Text = "Une solution a été trouvée";
                 foreach (GenericNode N in Lres)
                 {
-                    listBox1.Items.Add( N);
+                    listBox1.Items.Add(N);
                 }
                 labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
-                labelcountclosed.Text = "Nb noeuds des fermés : "+ g.CountInClosedList().ToString();
-                g.GetSearchTree( treeView1 );
+                labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
+                g.GetSearchTree(treeView1);
             }
 
         }
@@ -54,5 +58,57 @@ namespace projettaquin
         {
 
         }
-    }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NodeBateau.cas = 'b';
+            SearchTree g = new SearchTree();
+            NodeBateau N0 = new NodeBateau(100, 200);
+            NodeBateau._xf = 200;
+            NodeBateau._yf = 100;
+            List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
+
+            if (Lres.Count == 0)
+            {
+                labelsolution.Text = "Pas de solution";
+            }
+            else
+            {
+                labelsolution.Text = "Une solution a été trouvée";
+                foreach (GenericNode N in Lres)
+                {
+                    listBox1.Items.Add(N);
+                }
+                labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
+                labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
+                g.GetSearchTree(treeView1);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            NodeBateau.cas = 'c';
+            SearchTree g = new SearchTree();
+            NodeBateau N0 = new NodeBateau(200, 100);
+            NodeBateau._xf = 100;
+            NodeBateau._yf = 200;
+            List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
+
+            if (Lres.Count == 0)
+            {
+                labelsolution.Text = "Pas de solution";
+            }
+            else
+            {
+                labelsolution.Text = "Une solution a été trouvée";
+                foreach (GenericNode N in Lres)
+                {
+                    listBox1.Items.Add(N);
+                }
+                labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
+                labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
+                g.GetSearchTree(treeView1);
+            }
+        }
+    }     
 }

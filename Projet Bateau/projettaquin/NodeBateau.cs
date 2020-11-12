@@ -9,20 +9,21 @@ namespace projettaquin
     class NodeBateau : GenericNode
     {
 
-        double _x;
-        double _y;
-        public static  double _xf;
-        public static double _yf;
- /*
-        main
-        writeline
-        xo, yo, xf, yf
-            NodeBateau noeudinitial = new NodeBateau(xo,yo)
-            noeudInitial._xf = 250;
-            noeudInitial._yf = 250;
-   */ 
-        
-        public NodeBateau(double x, double y) : base() 
+        int _x;
+        int _y;
+        public static  int _xf;
+        public static int _yf;
+        public  static char cas ;
+        /*
+               main
+               writeline
+               xo, yo, xf, yf
+                   NodeBateau noeudinitial = new NodeBateau(xo,yo)
+                   noeudInitial._xf = 250;
+                   noeudInitial._yf = 250;
+          */
+
+        public NodeBateau(int x, int y) : base() 
         {
             _x = x;
             _y = y;
@@ -40,8 +41,8 @@ namespace projettaquin
         public override double GetArcCost(GenericNode N2) // Ajouter times estimation
         {
             NodeBateau NT = (NodeBateau)(N2);
-            double x2 = NT._x;
-            double y2 = NT._y;
+            int x2 = NT._x;
+            int y2 = NT._y;
  
             double distance = Math.Sqrt((_x - x2) * (_x - x2) + (_y - y2) * (_y - y2));
             if (distance > 10) return 1000000;
@@ -75,12 +76,33 @@ namespace projettaquin
             // estimation du temps de navigation entre p1 et p2
             return (distance / boatspeed);
         }
-        /*
-        public double time_estimation(double _x, double _y, double x2, double y2)
+        
+        // à modifier en ‘b’ ou ‘c’ selon le choix de l’utilisateur
+        public double get_wind_speed(double x, double y)
         {
-            
+            if (cas == 'a')
+                return 50;
+            else if (cas == 'b')
+                if (y > 150)
+                    return 50;
+                else return 20;
+            else if (y > 150)
+                return 50;
+            else return 20;
         }
-        */
+        public double get_wind_direction(double x, double y)
+        {
+            if (cas == 'a')
+                return 30;
+            else if (cas == 'b')
+                if (y > 150)
+                    return 180;
+                else return 90;
+            else if (y > 150)
+                return 170;
+            else return 65;
+        }
+     
 
         public override bool EndState() // Elle retourne true si le noeud est le noeud final
         {
@@ -90,20 +112,7 @@ namespace projettaquin
         public override List<GenericNode> GetListSucc() // Liste toute les positions dans lequels peut aller le bateau
         {
             
-            // On reconstruit le carré 3x3 à partir du nom et on mémorise la position du ?
-           /* int posx=-1; int posy=-1;
-            char[,] tab = new char[3,3];
-            for (int j = 0; j <= 2; j++)
-                for (int i = 0; i <= 2; i++) 
-                {
-                    tab[i,j] = Name[j*3+i];
-
-                    if (tab[i,j] == '?')
-                    {
-                        posx = i;
-                        posy = j;
-                    }
-                }*/
+       
 
             List<GenericNode> lsucc = new List<GenericNode>(); // permet de lister tout les positions potentiel dans lequel le bateau peut se déplacer
 
@@ -136,25 +145,27 @@ namespace projettaquin
             }
 
             //4 if pour les cotés et vérifier pour y différent 0 et 300
-            else if (_x == 0 && _y != 0) //Ligne du cas
+            else if (_x == 0 && _y != 0 && _y != 300) // A gauche
+            {
+                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
+                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
+
+                
+            }
+            else if (_y == 0 && _x != 0 && _x!= 300) //En bas
             {
                 lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
                 lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
                 lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
             }
-            else if (_y == 0 && _x != 0) //coté gauche
-            {
-                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
-                lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
-            }
-            else if (_x == 300 && _y != 0) //coté gauche
+            else if (_x == 300 && _y != 0 && _y==300) //coté droit
             {
                 lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
                 lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
                 lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
             }
-            else if (_y == 300 && _x != 0) //coté en haut
+            else if (_y == 300 && _x != 0 &&  _x!=300) //coté en haut
             {
                 lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
                 lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
@@ -167,105 +178,21 @@ namespace projettaquin
                 lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
                 lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
             }
-            /* if (posx > 0)
-             {
-                 // Successeur à gauche
-                 // recopie du tableau
-                 char[,] tab2 = new char[3, 3];
-                 for (int j = 0; j <= 2; j++)
-                     for (int i = 0; i <= 2; i++)
-                     {
-                         tab2[i, j] = tab[i, j];
-                     }
-                 // MAJ de la position du ?
-                 tab2[posx, posy] = tab2[posx - 1, posy];
-                 tab2[posx - 1, posy] = '?';
-                 // Ajout à listsucc
-                 lsucc.Add(new NodeBateau(GetStringFromTab(tab2)));
-             }
-             if (posx < 2)
-             {
-                 // Successeur à droite
-                 // recopie du tableau
-                 char[,] tab2 = new char[3, 3];
-                 for (int j = 0; j <= 2; j++)
-                     for (int i = 0; i <= 2; i++)
-                     {
-                         tab2[i, j] = tab[i, j];
-                     }
-                 // MAJ de la position du ?
-                 tab2[posx, posy] = tab2[posx + 1, posy];
-                 tab2[posx + 1, posy] = '?';
-                 // Ajout à listsucc
-                 lsucc.Add(new NodeBateau(GetStringFromTab(tab2)));
-             }
-
-             if (posy > 0)
-             {
-                 // Successeur en haut
-                 // recopie du tableau
-                 char[,] tab2 = new char[3, 3];
-                 for (int j = 0; j <= 2; j++)
-                     for (int i = 0; i <= 2; i++)
-                     {
-                         tab2[i, j] = tab[i, j];
-                     }
-                 // MAJ de la position du ?
-                 tab2[posx, posy] = tab2[posx, posy-1];
-                 tab2[posx, posy-1] = '?';
-                 // Ajout à listsucc
-                 lsucc.Add(new NodeBateau(GetStringFromTab(tab2)));
-             }
-             if (posy < 2)
-             {
-                 // Successeur en bas
-                 // recopie du tableau
-                 char[,] tab2 = new char[3, 3];
-                 for (int j = 0; j <= 2; j++)
-                     for (int i = 0; i <= 2; i++)
-                     {
-                         tab2[i, j] = tab[i, j];
-                     }
-                 // MAJ de la position du ?
-                 tab2[posx, posy] = tab2[posx, posy + 1];
-                 tab2[posx, posy + 1] = '?';
-                 // Ajout à listsucc
-                 lsucc.Add(new NodeBateau(GetStringFromTab(tab2)));
-             }
-             */
+         
             return lsucc;
         }
 
-        public override double CalculeHCost() //Calculer heuristique : distance entre le point 
+        public override double CalculeHCost() //Calculer heuristique : distance entre les deux points 
         {
 
         
-             // on compte les mal placés 
-            /*  int nb=8;
-              for (int i = 0; i < 8; i++)
-                  if (Name[i] == Convert.ToChar(i + 49)) // En code ASCII 1 est le 49ème caractère
-                      nb--;
-              return(nb);
-             */  
             return(0);
         }
-
-       /* private string GetStringFromTab ( char [,] tab ) 
-        {
-            string newname = "";
-            for (int j=0;j<=2; j++)
-                for (int i=0;i<=2;i++)
-                    {
-                       newname = newname + tab[i,j]; 
-                   }  
-            return newname;
-        }
-        */
 
         public override string ToString()
         {
             
-            return("abscisse : " +_x +" ordonnée"+_y); 
+            return("abscisse : " +   _x +" ordonnée"+  _y); 
         }
     }
 }

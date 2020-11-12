@@ -76,32 +76,8 @@ namespace projettaquin
         // Méthodes abstrates, donc à surcharger obligatoirement avec override dans une classe fille
         public abstract bool IsEqual(GenericNode N2);
         public abstract double GetArcCost(GenericNode N2); // ajouter les windspeed
-        public char cas = 'a';
-        // à modifier en ‘b’ ou ‘c’ selon le choix de l’utilisateur
-       public double get_wind_speed(double x, double y)
-        {
-            if (cas == 'a')
-                return 50;
-            else if (cas == 'b')
-                if (y > 150)
-                    return 50;
-                else return 20;
-            else if (y > 150)
-                return 50;
-            else return 20;
-        }
-        public double get_wind_direction(double x, double y)
-        {
-            if (cas == 'a')
-                return 30;
-            else if (cas == 'b')
-                if (y > 150)
-                    return 180;
-                else return 90;
-            else if (y > 150)
-                return 170;
-            else return 65;
-        }
+        
+      
         public abstract bool EndState();
         public abstract List<GenericNode> GetListSucc();
         public abstract double CalculeHCost();

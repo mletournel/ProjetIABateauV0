@@ -19,7 +19,7 @@ namespace projettaquin
             Application.Run(new Form1());
 
            // Console.WriteLine("Quelle est ta position en abscisse" ?)
-             NodeBateau noeudInitial = new NodeBateau(1, 1);
+             //NodeBateau noeudInitial = new NodeBateau(1, 1);
 
             // NodeBateau noeudInitial = new NodeBateau(1, 1);
             // NodeBateau noeudlambda = new NodeBateau(43, 5);

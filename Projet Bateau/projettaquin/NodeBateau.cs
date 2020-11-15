@@ -9,11 +9,11 @@ namespace projettaquin
     class NodeBateau : GenericNode
     {
 
-        int _x;
+        int _x ;
         int _y;
         public static  int _xf;
         public static int _yf;
-        public  static char cas ;
+        public static char cas ;
         /*
                main
                writeline
@@ -22,7 +22,15 @@ namespace projettaquin
                    noeudInitial._xf = 250;
                    noeudInitial._yf = 250;
           */
-
+          
+        public int Get_x ()
+        {
+            return _x;
+        }
+        public int Get_y()
+        {
+            return _y;
+        }
         public NodeBateau(int x, int y) : base() 
         {
             _x = x;
@@ -111,82 +119,156 @@ namespace projettaquin
 
         public override List<GenericNode> GetListSucc() // Liste toute les positions dans lequels peut aller le bateau
         {
+            /*
+            // Code position LUIS
+            List<GenericNode> lsucc = new List<GenericNode>();
+
+            if (_x != 0)
+            {
+                lsucc.Add(new NodeBateau(_x- 1, _y));
+                if (_y != 0)
+                {
+                    lsucc.Add(new NodeBateau(_x - 1, _y - 1));
+                }
+                if (_y != 300)
+                {
+                    lsucc.Add(new NodeBateau(_x- 1, _y + 1));
+                }
+            }
+
+            if (_y != 0)
+            {
+                lsucc.Add(new NodeBateau(_x, _y - 1));
+                if (_x != 300)
+                {
+                    lsucc.Add(new NodeBateau(_x + 1, _y - 1));
+                }
+            }
+
+            if (_x != 300)
+            {
+                lsucc.Add(new NodeBateau(_x + 1, _y));
+
+                if (_y != 300)
+                {
+                    lsucc.Add(new NodeBateau(_x + 1, _y + 1));
+                }
+            }
+
+            if (_y != 300)
+            {
+                lsucc.Add(new NodeBateau(_x, _y + 1));
+            }
+            */
+
+            List<GenericNode> lsucc = new List<GenericNode>(); 
+
+
+
+
+            // permet de lister tout les positions potentiel dans lequel le bateau peut se déplacer
             
-       
+              if (_x != 0 && _y != 0 &&  _x != 300 && _y != 300)
+            {
+                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x, _y+1)); // poour aller en haut 
+                lsucc.Add(new NodeBateau(_x - 1, _y - 1)); // Diagonale en bas à gauche = Sud Ouest
+                lsucc.Add(new NodeBateau(_x + 1, _y - 1));//Diagonale en bas à  gauche = Sud Est
+                lsucc.Add(new NodeBateau(_x - 1, _y + 1)); //Diagonale en haut à gauche = Nord Ouest
+                lsucc.Add(new NodeBateau(_x + 1, _y + 1)); //Diagonale en haut à droite = Nord est
 
-            List<GenericNode> lsucc = new List<GenericNode>(); // permet de lister tout les positions potentiel dans lequel le bateau peut se déplacer
-
+            }
             //4 if poour chaque coin 
             if (_x == 0 && _y == 0) // Cas en bas a gauche 
             {
                 lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
                 lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
+                lsucc.Add(new NodeBateau(_x + 1,_y+1)); //Diagonale en haut à droite = Nord Est
 
             }
 
             else if (_x == 0 && _y == 300) // Case en haut à gauche
             {
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x + 1, _y)); // pour aller a droite
                 lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x + 1, _y - 1));//Diagonale en bas à  gauche = Sud Est
 
             }
 
             else if (_x == 300 && _y == 0) // Case en bas à droite
             {
                 lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x - 1, _y + 1)); //Diagonale en haut à gauche = Nord Ouest
                 lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
-
+                
             }
             else if (_x == 300 && _y == 300) // Case en haut à droite
             {
                 lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
                 lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x - 1, _y - 1)); // Diagonale en bas à gauche = Sud Ouest
 
             }
 
             //4 if pour les cotés et vérifier pour y différent 0 et 300
-            else if (_x == 0 && _y != 0 && _y != 300) // A gauche
+            else if (_x == 0 && _y != 0 && _y != 300) // A coté gauche
             {
                 lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
                 lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
                 lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x + 1, _y - 1));//Diagonale en bas à  gauche = Sud Est
+                lsucc.Add(new NodeBateau(_x + 1, _y + 1)); //Diagonale en haut à droite = Nord Est
 
-                
+
+
             }
             else if (_y == 0 && _x != 0 && _x!= 300) //En bas
             {
                 lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
                 lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
                 lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x + 1, _y + 1)); //Diagonale en haut à droite = Nord Est
+                lsucc.Add(new NodeBateau(_x - 1, _y + 1)); //Diagonale en haut à gauche = Nord Ouest
+
             }
             else if (_x == 300 && _y != 0 && _y==300) //coté droit
             {
                 lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
                 lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
                 lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x - 1, _y + 1)); //Diagonale en haut à gauche = Nord Ouest
+                lsucc.Add(new NodeBateau(_x - 1, _y - 1)); // Diagonale en bas à gauche = Sud Ouest
+
+
             }
             else if (_y == 300 && _x != 0 &&  _x!=300) //coté en haut
             {
                 lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
                 lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
                 lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x - 1, _y - 1)); // Diagonale en bas à gauche = Sud Ouest
+                lsucc.Add(new NodeBateau(_x + 1, _y - 1));//Diagonale en bas à  gauche = Sud Est
+
+
             }
-            else
-            {
-                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
-                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
-                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
-            }
+           
          
+
             return lsucc;
         }
 
         public override double CalculeHCost() //Calculer heuristique : distance entre les deux points 
         {
+            
+            
+               double Hcost = Math.Sqrt(Math.Pow(_xf - _x, 2) + Math.Pow(_yf - _y, 2)) ;
+                return (HCost);
+            
+           
 
-        
-            return(0);
+          // return (0);
         }
 
         public override string ToString()

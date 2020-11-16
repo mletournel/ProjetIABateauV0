@@ -34,9 +34,29 @@ namespace projettaquin
             else
             {
                 labelsolution.Text = "Une solution a été trouvée";
+                int i = 0;
+                Pen penwhite = new Pen(Color.White); // d’autres couleurs sont disponibles
+                Graphics g1 = pictureBox1.CreateGraphics();
                 foreach (GenericNode N in Lres)
                 {
                     listBox1.Items.Add(N);
+                    if (i < Lres.Count - 1)
+                    {
+                        NodeBateau NT = (NodeBateau)(N);
+
+                        int x1 = NT.Get_x();
+                        int y1 = NT.Get_y();
+
+                        NodeBateau NT2 = (NodeBateau)(Lres[i + 1]);
+
+                        int x2 = NT2.Get_x();
+                        int y2 = NT2.Get_y();
+
+                        g1.DrawLine(penwhite, new Point((int)x1, pictureBox1.Height - (int)y1),
+                        new Point((int)x2, pictureBox1.Height - (int)y2));
+
+                        i++;
+                    }
                 }
                 labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
                 labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
@@ -74,16 +94,35 @@ namespace projettaquin
                 labelsolution.Text = "Pas de solution";
             }
             else
-            {
                 labelsolution.Text = "Une solution a été trouvée";
-                foreach (GenericNode N in Lres)
+            int i = 0;
+            Pen penwhite = new Pen(Color.White); // d’autres couleurs sont disponibles
+            Graphics g1 = pictureBox1.CreateGraphics();
+            foreach (GenericNode N in Lres)
+            {
+                listBox1.Items.Add(N);
+                if (i < Lres.Count - 1)
                 {
-                    listBox1.Items.Add(N);
+                    NodeBateau NT = (NodeBateau)(N);
+
+                    int x1 = NT.Get_x();
+                    int y1 = NT.Get_y();
+
+                    NodeBateau NT2 = (NodeBateau)(Lres[i + 1]);
+
+                    int x2 = NT2.Get_x();
+                    int y2 = NT2.Get_y();
+
+                    g1.DrawLine(penwhite, new Point((int)x1, pictureBox1.Height - (int)y1),
+                    new Point((int)x2, pictureBox1.Height - (int)y2));
+
+                    i++;
                 }
-                labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
-                labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
-                g.GetSearchTree(treeView1);
+
             }
+            labelcountopen.Text = "Nb noeuds des ouverts : " + g.CountInOpenList().ToString();
+            labelcountclosed.Text = "Nb noeuds des fermés : " + g.CountInClosedList().ToString();
+            g.GetSearchTree(treeView1);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -103,6 +142,8 @@ namespace projettaquin
             {
                 labelsolution.Text = "Une solution a été trouvée";
                 int i = 0;
+                Pen penwhite = new Pen(Color.White); // d’autres couleurs sont disponibles
+                Graphics g1 = pictureBox1.CreateGraphics();
                 foreach (GenericNode N in Lres)
                 {
                     listBox1.Items.Add(N);
@@ -117,8 +158,7 @@ namespace projettaquin
 
                         int x2 = NT2.Get_x();
                         int y2 = NT2.Get_y();
-                        Pen penwhite = new Pen(Color.White); // d’autres couleurs sont disponibles
-                        Graphics g1 = pictureBox1.CreateGraphics();
+                       
                         g1.DrawLine(penwhite, new Point((int)x1, pictureBox1.Height - (int)y1),
                         new Point((int)x2, pictureBox1.Height - (int)y2));
 
@@ -141,5 +181,14 @@ namespace projettaquin
             
         }
 
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
     }     
 }

@@ -84,6 +84,15 @@
   <ItemGroup>
     <None Include="bin\Debug\image.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\top-vue-mer-bleu-calme_1122-647.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\fond-horizon-technologique-futuriste_23-2148288341.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\structure-de-connexion-r-seau-fond-abstrait-technologie-futuriste-rendu-d-num-rique-grandes-donn-es-145778385 %281%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

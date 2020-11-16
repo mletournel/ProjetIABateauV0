@@ -118,7 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="top-vue-mer-bleu-calme_1122-647" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\top-vue-mer-bleu-calme_1122-647.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fond-horizon-technologique-futuriste_23-2148288341" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\fond-horizon-technologique-futuriste_23-2148288341.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="structure-de-connexion-r-seau-fond-abstrait-technologie-futuriste-rendu-d-num-rique-grandes-donn-es-145778385 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\structure-de-connexion-r-seau-fond-abstrait-technologie-futuriste-rendu-d-num-rique-grandes-donn-es-145778385 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

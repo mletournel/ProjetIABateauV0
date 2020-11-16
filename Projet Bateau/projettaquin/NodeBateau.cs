@@ -263,8 +263,8 @@ namespace projettaquin
         {
             
             
-               double Hcost = Math.Sqrt(Math.Pow(_xf - _x, 2) + Math.Pow(_yf - _y, 2)) ;
-                return (HCost);
+               double Hcost = Math.Sqrt(Math.Pow(_xf - _x, 2) + Math.Pow(_yf - _y, 2))/5 ;
+               return (HCost);
             
            
 

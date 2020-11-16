@@ -63,9 +63,40 @@ namespace projettaquin.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fond_horizon_technologique_futuriste_23_2148288341 {
+            get {
+                object obj = ResourceManager.GetObject("fond-horizon-technologique-futuriste_23-2148288341", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap structure_de_connexion_r_seau_fond_abstrait_technologie_futuriste_rendu_d_num_rique_grandes_donn_es_145778385__1_ {
+            get {
+                object obj = ResourceManager.GetObject("structure-de-connexion-r-seau-fond-abstrait-technologie-futuriste-rendu-d-num-riq" +
+                        "ue-grandes-donn-es-145778385 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top_vue_mer_bleu_calme_1122_647 {
+            get {
+                object obj = ResourceManager.GetObject("top-vue-mer-bleu-calme_1122-647", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

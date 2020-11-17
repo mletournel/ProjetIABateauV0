@@ -168,113 +168,114 @@ namespace projettaquin
 
             // permet de lister tout les positions potentiel dans lequel le bateau peut se déplacer
             
-              if (_x != 0 && _y != 0 &&  _x != 300 && _y != 300)
+            
+            //4 if poour chaque coin 
+                 if (_x != 0 && _y != 0 && _x != 300 && _y != 300)
             {
-                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
-                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
-                lsucc.Add(new NodeBateau(_x, _y+1)); // poour aller en haut 
-                lsucc.Add(new NodeBateau(_x - 1, _y - 1)); // Diagonale en bas à gauche = Sud Ouest
-                lsucc.Add(new NodeBateau(_x + 1, _y - 1));//Diagonale en bas à  gauche = Sud Est
-                lsucc.Add(new NodeBateau(_x - 1, _y + 1)); //Diagonale en haut à gauche = Nord Ouest
-                lsucc.Add(new NodeBateau(_x + 1, _y + 1)); //Diagonale en haut à droite = Nord est
+                lsucc.Add(new NodeBateau(_x - 2, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x + 2, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x, _y - 2)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x, _y + 2)); // poour aller en haut 
+                lsucc.Add(new NodeBateau(_x - 2, _y - 2)); // Diagonale en bas à gauche = Sud Ouest
+                lsucc.Add(new NodeBateau(_x + 2, _y - 2));//Diagonale en bas à  gauche = Sud Est
+                lsucc.Add(new NodeBateau(_x - 2, _y + 2)); //Diagonale en haut à gauche = Nord Ouest
+                lsucc.Add(new NodeBateau(_x + 2, _y + 2)); //Diagonale en haut à droite = Nord est
 
             }
-            //4 if poour chaque coin 
-            if (_x == 0 && _y == 0) // Cas en bas a gauche 
+           else if (_x == 0 && _y == 0) // Cas en bas a gauche 
             {
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
-                lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
-                lsucc.Add(new NodeBateau(_x + 1,_y+1)); //Diagonale en haut à droite = Nord Est
+                lsucc.Add(new NodeBateau(_x + 2, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x, _y + 2)); // pour aller en haut
+                lsucc.Add(new NodeBateau(_x + 2, _y+ 2)); //Diagonale en haut à droite = Nord Est
 
             }
 
             else if (_x == 0 && _y == 300) // Case en haut à gauche
             {
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // pour aller a droite
-                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
-                lsucc.Add(new NodeBateau(_x + 1, _y - 1));//Diagonale en bas à  gauche = Sud Est
+                lsucc.Add(new NodeBateau(_x + 2, _y)); // pour aller a droite
+                lsucc.Add(new NodeBateau(_x, _y - 2)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x + 2, _y - 2));//Diagonale en bas à  gauche = Sud Est
 
             }
 
             else if (_x == 300 && _y == 0) // Case en bas à droite
             {
-                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
-                lsucc.Add(new NodeBateau(_x - 1, _y + 1)); //Diagonale en haut à gauche = Nord Ouest
-                lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
+                lsucc.Add(new NodeBateau(_x - 2, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x - 2, _y + 2)); //Diagonale en haut à gauche = Nord Ouest
+                lsucc.Add(new NodeBateau(_x, _y + 2)); // pour aller en haut
                 
             }
             else if (_x == 300 && _y == 300) // Case en haut à droite
             {
-                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
-                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
-                lsucc.Add(new NodeBateau(_x - 1, _y - 1)); // Diagonale en bas à gauche = Sud Ouest
+                lsucc.Add(new NodeBateau(_x - 2, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x, _y - 2)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x - 2, _y - 2)); // Diagonale en bas à gauche = Sud Ouest
 
             }
 
             //4 if pour les cotés et vérifier pour y différent 0 et 300
             else if (_x == 0 && _y != 0 && _y != 300) // A coté gauche
             {
-                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
-                lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
-                lsucc.Add(new NodeBateau(_x + 1, _y - 1));//Diagonale en bas à  gauche = Sud Est
-                lsucc.Add(new NodeBateau(_x + 1, _y + 1)); //Diagonale en haut à droite = Nord Est
+                lsucc.Add(new NodeBateau(_x, _y - 2)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x, _y + 2)); // pour aller en haut
+                lsucc.Add(new NodeBateau(_x + 2, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x + 2, _y - 2));//Diagonale en bas à  gauche = Sud Est
+                lsucc.Add(new NodeBateau(_x + 2, _y + 2)); //Diagonale en haut à droite = Nord Est
 
 
 
             }
             else if (_y == 0 && _x != 0 && _x!= 300) //En bas
             {
-                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
-                lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
-                lsucc.Add(new NodeBateau(_x + 1, _y + 1)); //Diagonale en haut à droite = Nord Est
-                lsucc.Add(new NodeBateau(_x - 1, _y + 1)); //Diagonale en haut à gauche = Nord Ouest
+                lsucc.Add(new NodeBateau(_x - 2, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x, _y + 2)); // pour aller en haut
+                lsucc.Add(new NodeBateau(_x + 2, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x + 2, _y + 2)); //Diagonale en haut à droite = Nord Est
+                lsucc.Add(new NodeBateau(_x - 2, _y + 2)); //Diagonale en haut à gauche = Nord Ouest
 
             }
             else if (_x == 300 && _y != 0 && _y==300) //coté droit
             {
-                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
-                lsucc.Add(new NodeBateau(_x, _y + 1)); // pour aller en haut
-                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
-                lsucc.Add(new NodeBateau(_x - 1, _y + 1)); //Diagonale en haut à gauche = Nord Ouest
-                lsucc.Add(new NodeBateau(_x - 1, _y - 1)); // Diagonale en bas à gauche = Sud Ouest
+                lsucc.Add(new NodeBateau(_x, _y - 2)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x, _y + 2)); // pour aller en haut
+                lsucc.Add(new NodeBateau(_x - 2, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x - 2, _y + 2)); //Diagonale en haut à gauche = Nord Ouest
+                lsucc.Add(new NodeBateau(_x - 2, _y - 2)); // Diagonale en bas à gauche = Sud Ouest
 
 
             }
             else if (_y == 300 && _x != 0 &&  _x!=300) //coté en haut
             {
-                lsucc.Add(new NodeBateau(_x + 1, _y)); // poour aller a droite
-                lsucc.Add(new NodeBateau(_x, _y - 1)); // pour aller en bas
-                lsucc.Add(new NodeBateau(_x - 1, _y)); // poour aller à gauche 
-                lsucc.Add(new NodeBateau(_x - 1, _y - 1)); // Diagonale en bas à gauche = Sud Ouest
-                lsucc.Add(new NodeBateau(_x + 1, _y - 1));//Diagonale en bas à  gauche = Sud Est
+                lsucc.Add(new NodeBateau(_x + 2, _y)); // poour aller a droite
+                lsucc.Add(new NodeBateau(_x, _y - 2)); // pour aller en bas
+                lsucc.Add(new NodeBateau(_x - 2, _y)); // poour aller à gauche 
+                lsucc.Add(new NodeBateau(_x - 2, _y - 2)); // Diagonale en bas à gauche = Sud Ouest
+                lsucc.Add(new NodeBateau(_x + 2, _y - 2));//Diagonale en bas à  gauche = Sud Est
 
 
             }
-           
-         
+
+       
 
             return lsucc;
         }
 
         public override double CalculeHCost() //Calculer heuristique : distance entre les deux points 
         {
-            
-            
-               double Hcost = Math.Sqrt(Math.Pow(_xf - _x, 2) + Math.Pow(_yf - _y, 2))/5 ;
-               return (HCost);
-            
-           
 
-          // return (0);
+            double Hcoste = Math.Sqrt(Math.Pow(_xf - _x, 2) + Math.Pow(_yf - _y, 2))/45; //  en divisant par 45 CAS A = 7s, CAS B= 20 secodnes et Cas C= 5 secondes
+            return (Hcoste);
+
+
+
+
+        // return (0);
         }
 
         public override string ToString()
         {
-            
-            return("abscisse : " +   _x +" ordonnée"+  _y); 
+
+            return ("abscisse : " + _x + " ordonnée" + _y + " Heuristique" + CalculeHCost());
         }
     }
 }

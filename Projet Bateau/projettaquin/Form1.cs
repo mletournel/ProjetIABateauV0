@@ -40,6 +40,7 @@ namespace projettaquin
                 foreach (GenericNode N in Lres)
                 {
                     listBox1.Items.Add(N);
+                    listBox1.Items.Add("G : " + N.GetGCost().ToString());
                     if (i < Lres.Count - 1)
                     {
                         NodeBateau NT = (NodeBateau)(N);
@@ -91,6 +92,7 @@ namespace projettaquin
 
             if (Lres.Count == 0)
             {
+
                 labelsolution.Text = "Pas de solution";
             }
             else
@@ -101,6 +103,7 @@ namespace projettaquin
             foreach (GenericNode N in Lres)
             {
                 listBox1.Items.Add(N);
+                listBox1.Items.Add("G : " + N.GetGCost().ToString());
                 if (i < Lres.Count - 1)
                 {
                     NodeBateau NT = (NodeBateau)(N);
@@ -147,6 +150,7 @@ namespace projettaquin
                 foreach (GenericNode N in Lres)
                 {
                     listBox1.Items.Add(N);
+                    listBox1.Items.Add("G : " + N.GetGCost().ToString());
                     if (i < Lres.Count-1)
                     {
                         NodeBateau NT = (NodeBateau)(N);
@@ -187,6 +191,11 @@ namespace projettaquin
         }
 
         private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

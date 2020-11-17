@@ -45,10 +45,11 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(232, 315);
+            this.listBox1.Location = new System.Drawing.Point(146, 315);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(238, 316);
+            this.listBox1.Size = new System.Drawing.Size(346, 316);
             this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // labelcountopen
             // 
@@ -101,7 +102,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.AliceBlue;
             this.button1.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(52, 358);
+            this.button1.Location = new System.Drawing.Point(12, 346);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 47);
             this.button1.TabIndex = 0;
@@ -113,9 +114,9 @@
             // 
             this.button2.BackColor = System.Drawing.Color.AliceBlue;
             this.button2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(52, 454);
+            this.button2.Location = new System.Drawing.Point(12, 427);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 48);
+            this.button2.Size = new System.Drawing.Size(128, 48);
             this.button2.TabIndex = 9;
             this.button2.Text = "Resoudre cas B";
             this.button2.UseVisualStyleBackColor = false;
@@ -125,9 +126,9 @@
             // 
             this.button3.BackColor = System.Drawing.Color.AliceBlue;
             this.button3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(52, 552);
+            this.button3.Location = new System.Drawing.Point(12, 510);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 43);
+            this.button3.Size = new System.Drawing.Size(128, 43);
             this.button3.TabIndex = 10;
             this.button3.Text = "Rédoudre cas C";
             this.button3.UseVisualStyleBackColor = false;
@@ -137,7 +138,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::projettaquin.Properties.Resources.structure_de_connexion_r_seau_fond_abstrait_technologie_futuriste_rendu_d_num_rique_grandes_donn_es_145778385__1_;
             this.pictureBox1.Image = global::projettaquin.Properties.Resources.top_vue_mer_bleu_calme_1122_647;
-            this.pictureBox1.Location = new System.Drawing.Point(742, 331);
+            this.pictureBox1.Location = new System.Drawing.Point(757, 331);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 300);
             this.pictureBox1.TabIndex = 11;
@@ -150,7 +151,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Niagara Engraved", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(62, 132);
+            this.textBox1.Location = new System.Drawing.Point(70, 150);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(528, 76);
             this.textBox1.TabIndex = 12;
